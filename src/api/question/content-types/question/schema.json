@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "singularName": "question",
+    "pluralName": "questions",
+    "displayName": "Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "a": {
+      "type": "text",
+      "required": true
+    },
+    "b": {
+      "type": "text",
+      "required": true
+    },
+    "c": {
+      "type": "text",
+      "required": true
+    },
+    "d": {
+      "type": "text",
+      "required": true
+    },
+    "answer": {
+      "type": "enumeration",
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "required": true
+    },
+    "quizzes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::quiz.quiz",
+      "inversedBy": "questions"
+    }
+  }
+}
